@@ -28,21 +28,21 @@ class SingledLinkedList{
 
     pop(){
         var current=this.head;
-        var afterTail=this.tail;
-
-        if(!this.head) return undefined;
+        var nt=current;
 
         while(current.next){
-            afterTail=current;
+            nt=current;
             current=current.next;
         }
-        this.tail=afterTail;
+        this.tail=nt;
         this.tail.next=null;
         this.length--;
-        if(this.length === 0){
+
+        if(this.length===0){
             this.head=null;
             this.tail=null;
         }
+
         return current;
     }
     shift(){
@@ -93,12 +93,6 @@ linked.push('han');
 
 console.log(linked);
 
-// linked.pop()
-// console.log(linked);
-
-linked.shift();
-console.log(linked)
-linked.unshift("this is unshift");
-linked.unshift("hello this");
+console.log(linked.pop());
+console.log(linked.pop());
 console.log(linked);
-console.log(linked.get(1));
